@@ -14,7 +14,7 @@
     "concurrently": "^4.1.0"
   },
   "scripts": {
-    "dev": "concurrently -n Client,Server -c cyan,magenta \"cd client && PORT=3000 yarn start\" \"PORT=3001 yarn start\"",
+    "dev": "concurrently -n Client,Server -c cyan,magenta \"cd client && PORT=3000 yarn start\" \"PORT=3001 nodemon ./server.js --exec babel-node\"",
     "start": "babel-node server.js",
     "heroku-postbuild": "cd client && yarn && yarn run build"
   }
